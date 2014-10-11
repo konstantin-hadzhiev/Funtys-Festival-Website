@@ -1,0 +1,199 @@
+<?php 
+session_start();
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Event</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<!-- rounded corners for IE -->
+<script src="DD_roundies_0.0.2a-min.js"></script>
+<script>
+DD_roundies.addRule("#nav", "5px");
+DD_roundies.addRule("#nav li", "5px");
+</script>
+<script>
+$(document).ready(function(){
+	$nav_li=$("#nav li");
+	$nav_li_a=$nav_li.children("a");
+	var animSpeed=450; //fade speed
+	var hoverTextColor="#fff"; //text color on mouse over
+	var hoverBackgroundColor="#9e0039"; //background color on mouse over
+	var textColor=$nav_li_a.css("color");
+	var backgroundColor=$nav_li.css("background-color");
+	$nav_li_a.hover(function() {
+		var $this=$(this);
+		$this.stop().animate({ color: hoverTextColor }, animSpeed).parent().stop().animate({ backgroundColor: hoverBackgroundColor }, animSpeed);
+	},function() {
+		var $this=$(this);
+		$this.stop().animate({ color: textColor }, animSpeed).parent().stop().animate({ backgroundColor: backgroundColor }, animSpeed);
+	});
+});
+</script>
+</head>
+<body>
+
+
+<div id="nav">
+	<ul>
+    	<li><a href="info.php">Info</a></li>
+        <li><a href="Line-up.php">LineUp</a></li>
+		<li><a href="form.php">Buy A Ticket</a></li>
+        <?php if(!isset($_SESSION['email'])){
+        echo "<li><a href='ticketdeal.php'>Profile</a></li>";}
+		else { echo "<li><a href='member.php'>Profile</a></li>";} ?>
+        <li><a href="camping.php">Camping</a></li>
+        <li><a href="faq.php">FAQ</a></li>
+		
+    </ul>
+    <div class="clear"></div>
+</div>
+<div id="logo"><a href="index.php"><img src="img/logo.jpg"></a></div>
+<div id="cont">
+	<div id="title"><h2>FAQ</div>
+
+	<div id="faqdiv">
+	<div class="faqwrapper">
+  				<p class="maininfo">We try to answer all questions as accurately as possible, but we would also like to ask that you check all information on the website and FAQ section before contacting us. This way we can limit the amount of mails in the info mailbox, in order to be able to answer the most essential questions in detail.<br>E-mails containing questions of which the answers can be found on the website will therefor not be answered.</p>
+  			</div>
+  			<div class="floatstop">
+  				<h3>
+	  				<span>
+	  					<em>General Questions </em>
+	  				</span>
+	  			</h3>
+  			</div>
+  			<div class="faqwrapper">
+  				<h4 class="question">What is the minimum age to attend Tomorrowland 2013?</h4>
+	  			<div class="answer hidden">
+	  				<p>The minimum age for entry to the festival is 18. People born in 1995 will be granted entry even if they turn 18 after the festival. We operate a strict entrance policy and anybody born in 1996 or later will not be permitted entry, even if accompanied by an adult.</p>
+	  			</div>
+	  			<h4 class="question">Can I work at Tomorrowland, even as a volunteer?</h4>
+	  			<div class="answer hidden">
+	  				<ul><li>This is not possible. Every year we work with the same suppliers and our own loyal staff. During the production days we do not have the time to train new crew. And to inform you: as a crewmember you won’t be able to enjoy the festival, as you will need to work hard during festival hours. Unfortunately there are currently no vacancies for crewmembers.</li><li>We cannot allow a volunteer to work at our festival, as it is prohibited by Belgian Law. We can only offer work to an existing Association with members older than 18 years and able to work the full 3 days of the festival.</li><li>The acts and dancers are the same team each year and we cannot offer this to other people.</li></ul>	  			</div>
+	  			<h4 class="question">Problems with registration? Did you not receive a confirmation mail?</h4>
+	  			<div class="answer hidden">
+	  				<p>Our apologies for the not receiving the preregistration e-mail. We use a service that prevents blocking the e-mail to most providers. However there still can be a delivery issue for various reasons. In order to solve this we kindly ask you to:<br>- Double check your SPAM, Unwanted or mail Quarantaine folder.<br>- Resubmit the preregistration form and double check the entered e-mail.<br>- If this still doesn’t work, please try to preregister with a gmail or hotmail mailbox. These are known to work well and do not block the preregistration mail.</p>
+	  			</div>
+  			</div>
+  			<div class="floatstop">
+  				<h3>
+	  				<span>
+	  					<em>Ticket Sale</em>
+	  				</span>
+	  			</h3>
+  			</div>
+  			<div class="faqwrapper">
+  				<h4 class="question">Can I buy my ticket at Free Record Shop?</h4>
+	  			<div class="answer hidden">
+	  				<ul><li>Since 2012 we do not sell hard tickets anymore for Tomorrowland. So it’s not possible to buy your ticket with Free Record Shop. You can only buy your tickets on the Tomorrowland website. The ticketshop will be available when ticket sale starts.</li><li>It is also not possible to buy your tickets at the venue.</li></ul>	  			</div>
+	  			<h4 class="question">Can I buy group tickets?</h4>
+	  			<div class="answer hidden">
+	  				<p>No, we don’t sell tickets to groups. There is a maximum of 4 tickets per order. Please be aware that you will need the first and last name of the people you are buying tickets for or you cannot purchase tickets. These names cannot be changed.</p>
+	  			</div>
+	  			<h4 class="question">What are the different payment methods? </h4>
+	  			<div class="answer hidden">
+	  				<p>For the <strong>Global Journey Package:</strong> In the Tomorrowland Travel Shop, from 17h00 14 February 2013, you can use following payment 
+methods:<br>Visa<br>Mastercard<br>American Express<br>Diners<br><br>During the <strong>Worldwide Ticket sale</strong>, from 17h00 Saturday 16 February, the following payment methods are possible:<br>Bancontact/Mr. Cash<br>iDeal<br>Mastercard/Visa<br>ING home pay<br>PayPal<br>Visa Delta<br>Sofortuberweisung<br>Visa Electron<br>Maestro<br></p>
+	  			</div>
+	  				  			<h4 class="question">Can I upgrade my ticket?</h4>
+	  			<div class="answer hidden">
+	  				<p>There are no circumstances in which you can upgrade your ticket. For example it’s not possible to upgrade a Full Madness Regular Pass to a Full Madness Comfort Pass.</p>
+	  			</div>
+	  			<h4 class="question">Can I change the name on the ticket?</h4>
+	  			<div class="answer hidden">
+	  				<p>Name changes are not possible. Tickets are final! However, small spelling mistakes should not cause any problems. You can only use the Exchange Desk to sell your ticket, which will no longer be used by you (= name change).</p>
+	  			</div>
+	  			<h4 class="question">Can I resell my ticket?</h4>
+	  			<div class="answer hidden">
+	  				<p>You can only sell your ticket if other people are still looking for your type of ticket. From May you can register your tickets at the online Exchange desk, if you want to resell them. If someone is interested in buying your tickets (people who register for the waiting list), we will refund the cost of the ticket to your bank account. If there is no demand for your ticket, you won’t get your money back.</p>
+	  			</div>
+	  			<h4 class="question">Can I cancel my ticket after I have bought it?</h4>
+	  			<div class="answer hidden">
+	  				<ul><li>If you no longer wish to use your ticket or can’t use it anymore, you can register your ticket at the online Exchange desk (available early May 2013). If other people are looking for your type of ticket, we can refund you the ticket value. If there is no demand for your ticket, we will not refund you the money.</li><li>Tickets cannot be cancelled. All purchases are final.</li></ul>	  			</div>
+	  			<h4 class="question">How can I activate my bracelet?</h4>
+	  			<div class="answer hidden">
+	  				<ul><li>Step 1: After you have purchased your ticket(s) for Tomorrowland and/or DreamVille you will receive a confirmation e-mail. This e-mail will contain a link, which you will need to use to download your confirmations ticket(s). This must be done for every ticket you have bought. You will not receive E-tickets for Tomorrowland 2013! Only way to access DreamVille and/ or Tomorrowland is to wear the correct bracelet.</li><li>Step 2: In June we will send your festival bracelet(s) with an insured sending.  The special "Treasure Case" will contain your bracelet and a short manual how to activate your bracelet(s).</li></ul>	  			</div>
+	  			<h4 class="question">What is the difference between Full Madness Pass and Full Madness Pass Comfort?</h4>
+	  			<div class="answer hidden">
+	  				<p>Comfort = VIP<br>Both tickets are valid for access to the festival during the 3 days. But the Comfort ticket also gives you access to the different Comfort zones (VIP decks)<br>Parking, DreamVille &amp; lockers are not included in these tickets.</p>
+	  			</div>
+	  			<h4 class="question">When am I allowed to buy a DreamVille ticket?</h4>
+	  			<div class="answer hidden">
+	  				<p>You can only buy a DreamVille ticket when you’re in possession of a Tomorrowland Full Madness Regular/ Comfort Pass. Besides this we also have our Global Journey Packages which includes a DreamVille ticket. </p>
+	  			</div>
+	  			<h4 class="question">Are DreamVille tickets sold per tent or per person?</h4>
+	  			<div class="answer hidden">
+	  				<ul><li><strong>DreamVille 5 Day Pass</strong> = PER PERSON</li><li><strong>DreamVille Easy Tent 5 Day Pass</strong> = 1 ticket PER TENT (Capacity/tent = 2 or 4 pers/tent)</li><li><strong>DreamVille Relax Room 5 Day Pass</strong> = 1 ticket PER 2 PERSONS (1 ticket per Relax Room – Max. Capacity/Room = 2 pers.)</li></ul>	  			</div>
+	  			<h4 class="question">Is the DreamVille ticket included in the Tomorrowland pass?</h4>
+	  			<div class="answer hidden">
+	  				No, you need to by a DreamVille ticket to have access to the camping site. So you would need 2 types of tickets to have access to the festival and camping.	  			</div>
+  			</div>
+  			<div class="floatstop">
+  				<h3>
+	  				<span>
+	  					<em>Global Journey – The Official Tomorrowland Travel</em>
+	  				</span>
+	  			</h3>
+  			</div>
+  			<div class="faqwrapper">  				
+	  			<h4 class="question">Can I upgrade my ticket/ package? Change the name on the tickets?</h4>
+	  			<div class="answer hidden">
+	  				<ul><li>As you create your own package, therefor we ask you to think twice before deciding what to buy. An upgrade of your ticket is not possible once purchase has been completed.</li><li>Name changes are not possible at all! This also applies to any travel or hotel reservations.</li></ul>	  			</div>
+	  			<h4 class="question">Can I change my time schedule for my flight or train?</h4>
+	  			<div class="answer hidden">
+	  				<p>We can only offer you the flights and trains according to the time schedules on the website. These are fixed schedules and cannot be changed according to your personal preferences or needs. You’ll need to choose the flight or train that suits you the best.<br>Please be aware that time schedules could change due to delays or technical problems, so we advise you to check this regularly.</p>
+	  			</div>
+	  			<h4 class="question">What are the different types of rooms in the hotels?</h4>
+	  			<div class="answer hidden">
+	  				<p>We offer you single and double rooms in the hotels. When you book a double room you cannot choose between a double bed or twin room with 2 separate beds.</p>
+	  			</div>
+	  			<h4 class="question">What if I do not use my out- or inbound journey?</h4>
+	  			<div class="answer hidden">
+	  				<ul><li>Refunds are not possible when you do not use your inbound journey.</li><li>When you do not use your outbound flight, your inbound flight will be cancelled automatically. This is the same policy for the Train Package (Eurostar).</li><li>If you do not use your flight or train ticket at all, you will need to collect your bracelets at the DreamVille Entrance 1. (Exact timings will be sent to you at a later date).</li></ul>	  			</div>
+	  			<h4 class="question">Where can I pick up my Tomorrowland &amp; DreamVille Passes?</h4>
+	  			<div class="answer hidden">
+	  				<p>You will receive our briefings and information about your package by e-mail. Make sure to bring this correspondence at all times.<br>You will receive your Flight/ Train ticket per e-mail. To collect your festival bracelets there are 2 scenarios:</p><p>You <strong>USE</strong> your flight or train ride:</p><ul><li><strong>FLIGHT Package</strong>: There is a Special Tomorrowland Desk at the luggage terminal in Brussels Airport. Do not leave this terminal before you have received your Global Journey envelope.</li><li><strong>TRAIN Package</strong>: Official Tomorrowland Desk at the trains station, London St. Pancras</li></ul><p>You do <strong>NOT USE</strong> your flight or train ride:</p><ul><li><strong>FLIGHT Package</strong>: Official Info desk in front of the arrival hall at Brussels Airport (right across the Java coffee bar) This desk is open during a few hours (exact hours will be informed later on) afterwards you can pick up your tickets at DreamVille Entrance 1 (not entrance 2 or 3)</li><li><strong>TRAIN Package</strong>: Info Desk at DreamVille Entrance 1 (not entrance 2 or 3)</li></ul>	  			</div>
+  			</div>
+  			<div class="floatstop">
+  				<h3>
+	  				<span>
+	  					<em>Other questions?</em>
+	  				</span>
+	  			</h3>
+  			</div>
+  			<div class="faqwrapper">  				
+	  			<h4 class="question">Press Accreditations</h4>
+	  			<div class="answer hidden">
+	  				<p>Only possible if you are a photographer or journalist with an existing medium! Not for personal purposes or a hobby.<br>Contact:</p>
+	  			</div>
+	  			<h4 class="question">Contact us</h4>
+	  			<div class="answer hidden">
+	  				
+	  			</div>
+  			</div>
+		</div>
+
+
+	</div>
+</div>
+	<div id="footer">
+ <table style="width:680px;margin:0 auto;">
+  <tr>
+   <td align="left"><iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FFuntysFestival2013&amp;width=220&amp;height=62&amp;show_faces=false&amp;colorscheme=light&amp;stream=false&amp;show_border=false&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:220px; height:62px;" allowTransparency="true"></iframe></td><td><h3 style="color:white;">Copyright &#169; 2013  Funtys Mind Ltd.</h3></td><td><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://twitter.com/FuntysFestival">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></td></tr></table>
+   
+ 
+ 
+ </footer>	
+	
+	
+	
+	</body>
+</html>

@@ -1,0 +1,5 @@
+<?php
+$db_conn = mysql_connect("athena.fhict.nl", "dbi271234", "gR2mFIKQcm") or die("no connection with the DB");
+mysql_select_db("dbi271234", $db_conn) or die("i cannot select a db");
+
+?>

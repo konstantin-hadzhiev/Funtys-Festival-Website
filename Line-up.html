@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Event</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<!-- rounded corners for IE -->
+<script src="DD_roundies_0.0.2a-min.js"></script>
+<script>
+DD_roundies.addRule("#nav", "5px");
+DD_roundies.addRule("#nav li", "5px");
+</script>
+<script>
+$(document).ready(function(){
+	$nav_li=$("#nav li");
+	$nav_li_a=$nav_li.children("a");
+	var animSpeed=450; //fade speed
+	var hoverTextColor="#fff"; //text color on mouse over
+	var hoverBackgroundColor="#9e0039"; //background color on mouse over
+	var textColor=$nav_li_a.css("color");
+	var backgroundColor=$nav_li.css("background-color");
+	$nav_li_a.hover(function() {
+		var $this=$(this);
+		$this.stop().animate({ color: hoverTextColor }, animSpeed).parent().stop().animate({ backgroundColor: hoverBackgroundColor }, animSpeed);
+	},function() {
+		var $this=$(this);
+		$this.stop().animate({ color: textColor }, animSpeed).parent().stop().animate({ backgroundColor: backgroundColor }, animSpeed);
+	});
+});
+</script>
+</head>
+<body>
+
+
+<div id="nav">
+	<ul>
+    	<li><a href="info.html">Info</a></li>
+        <li><a href="Line-up.html">LineUp</a></li>
+		<li><a href="form.php">Buy A Ticket</a></li>
+        <li><a href="ticketdeal.php">Profile</a></li>
+        <li><a href="camping.php">Camping</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+		
+    </ul>
+    <div class="clear"></div>
+</div>
+<a href="index.html"><div id="logo"></div></a>
+<div id="cont">
+	<div id="title"><h2>Line Up</div>
+	<table id="lineuptable" border="5" cellspacing="15">
+	<tr >
+	<td class="cellclass" align="center">26 July</td>
+	<td class="cellclass" align="center">27 July</td>
+	<td class="cellclass" align="center">28 July</td>
+	<td class="cellclass" align="center"> Time </td>
+	</tr>
+	<tr>
+	<td class="cellclass">Armin Van Buuren</td>
+	<td class="cellclass">Tiesto</td>
+	<td class="cellclass">Above & Beyond</td>
+	<td class="cellclass"> 20:00 - 23:00 </td>
+	
+	</tr>
+	<tr>
+	<td class="cellclass">Dash Berlin</td>
+	<td class="cellclass">Markus Schulz</td>
+	<td class="cellclass">Tritonal</td>
+	<td class="cellclass"> 18:00 - 19:50 </td>
+	</tr>
+	<tr>
+	<td class="cellclass">Ferry Corsten</td>
+	<td class="cellclass">Dennis Sheperd</td>
+	<td class="cellclass">Chase & Status</td>
+	<td class="cellclass"> 16:00 - 17:50 </td>
+	</tr>
+	</table>
+	</div>
+
+
+</div>
+<div id="footer">
+ <table style="width:680px;margin:0 auto;">
+  <tr>
+   <td align="left"><img src="img/fb.png"><img src="img/tw.png"></td><td style="padding-left:50px;"><h3 style="color:white;">Copyright © 2013  Funtys Mind Ltd.</h3></td></tr></table>
+   
+ 
+ 
+ </footer>	
+	
+	
+	
+	</body>
+</html>
